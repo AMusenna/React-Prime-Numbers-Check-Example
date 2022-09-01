@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Card from './components/Card';
+import Prime from "./components/Prime";
+
 
 function App() {
+
+
+  const [val, setVal] = useState("");
+  const [girilenSayi, setgirilenSayi] = useState(20);
+  const [sonuc, setSonuc] = useState("");
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">  
+      <Prime 
+        val={val}
+        setVal={setVal}
+        sonuc={sonuc}
+        setSonuc={setSonuc}
+      />
+      <Card
+        girilenSayi= {girilenSayi}
+        setgirilenSayi= {setgirilenSayi}
+        sonuc={sonuc}
+      />
     </div>
   );
 }
